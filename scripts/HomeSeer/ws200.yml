@@ -1,0 +1,96 @@
+# ws200_status_mode - Set HS-WS200+ switch into Status mode
+# Parameters:
+#   node_id (Int):     Z-Wave Node ID of the switch to change
+#
+# Notes:
+#   Be aware that this MUST be the numeric Z-Wave node ID (e.g. '10') and NOT
+#   the assigned entity name (e.g. 'zwave.my_ws200_switch').
+ws200_status_mode:
+  alias: Activate "Status mode" on an HS-WS200+ switch
+  sequence:
+    - service: zwave.set_config_parameter
+      data_template:
+        node_id: "{{ node_id }}"
+        parameter: 13
+        value: Status mode
+
+
+# ws200_normal_mode - Set HS-WS200+ switch into Normal (dimmer) mode
+# Parameters:
+#   node_id (Int):     Z-Wave Node ID of the switch to change
+#
+# Notes:
+#   Be aware that this MUST be the numeric Z-Wave node ID (e.g. '10') and NOT
+#   the assigned entity name (e.g. 'zwave.my_ws200_switch').
+ws200_normal_mode:
+  alias: Activate "Normal mode" on an HS-WS200+ switch
+  sequence:
+    - service: zwave.set_config_parameter
+      data_template:
+        node_id: "{{ node_id }}"
+        parameter: 13
+        value: Normal mode
+
+
+# ws200_led_color - Set HS-WS200+ color for a given LED
+# Parameters:
+#   node_id (Int):     Z-Wave Node ID of the switch to change
+#   led (Int):         LED (1-7) to set the color for (1 is bottom, 7 is top)
+#   color (String):    Desired color (see notes)
+# Notes:
+#   Be aware that this MUST be the numeric Z-Wave node ID (e.g. '10') and NOT
+#   the assigned entity name (e.g. 'zwave.my_ws200_switch').
+#
+#   Valid colors are: Off, Blue, Cyan, Green, Red, White, and Yellow
+ws200_led_color:
+  alias: Change the specified "Status mode" LED color on an HS-WS200+ switch
+  sequence:
+    - service: zwave.set_config_parameter
+      data_template:
+        node_id: "{{ node_id }}"
+        parameter: "{{ led + 20 }}"
+        value: "{{ color }}"
+
+# ws200_blink_frequency - Set HS-WS200+ LED blinking frequency
+# Parameters:
+#   node_id (Int):     Z-Wave Node ID of the switch to change
+#   frequency (Int):   Blink frequency in 100ms integer increments; 0 is solid
+# Notes:
+#   Be aware that this MUST be the numeric Z-Wave node ID (e.g. '10') and NOT
+#   the assigned entity name (e.g. 'zwave.my_ws200_switch').
+ws200_blink_frequency:
+  alias: Change the blinking LED frequency on an HS-WS200+ switch
+  sequence:
+    - service: zwave.set_config_parameter
+      data_template:
+        node_id: "{{ node_id }}"
+        parameter: 30
+        value: "{{ frequency }}"
+
+
+# Setting the blink status on an LED is tricky since it requires a bit mask
+# where the color requires a specific config parameter. I couldn't figure a
+# way to have the script select multiple LEDs by adding and subtracting
+# values, so it's up to the script caller to take care of it. Something like
+# Node Red or AppDaemon that can do more complex status checking is probably
+# the best way to handle this.
+
+# ws200_blink_bitmask - Set the bitmask for LEDs to blink
+# Parameters:
+#   node_id (Int):     Z-Wave Node ID of the switch to change
+#   bitmask (Int):     Bit mask for LED blinking (see notes)
+# Notes:
+#   Be aware that this MUST be the numeric Z-Wave node ID (e.g. '10') and NOT
+#   the assigned entity name (e.g. 'zwave.my_ws200_switch').
+#
+#   A single byte controls the LEDs in total, so '0' will be all solid, and
+#  '255' will be all blinking. Bit 0 (value of 1) is LED 1, and bit 7 (value
+#  of 64) is LED 7.
+ws200_led_blink_bitmask:
+  alias: Specify which LEDs to blink in Status mode via bitmask on HS-WS200+ switch
+  sequence:
+    - service: zwave.set_config_parameter
+      data_template:
+        node_id: "{{ node_id }}"
+        parameter: 31
+        value: "{{ bitmask }}"
