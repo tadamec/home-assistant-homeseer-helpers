@@ -1,4 +1,4 @@
-# ws200_status_mode - Set HS-WS200+ switch into Status mode
+# ws200_status_mode - Set HS-WS200+/HS-WD200+ switch into Status mode
 # Parameters:
 #   node_id (Int):     Z-Wave Node ID of the switch to change
 #
@@ -6,7 +6,7 @@
 #   Be aware that this MUST be the numeric Z-Wave node ID (e.g. '10') and NOT
 #   the assigned entity name (e.g. 'zwave.my_ws200_switch').
 ws200_status_mode:
-  alias: Activate "Status mode" on an HS-WS200+ switch
+  alias: Activate "Status mode" on an HS-WS200+/HS-WD200+ switch
   sequence:
     - service: zwave.set_config_parameter
       data_template:
@@ -15,7 +15,7 @@ ws200_status_mode:
         value: Status mode
 
 
-# ws200_normal_mode - Set HS-WS200+ switch into Normal (dimmer) mode
+# ws200_normal_mode - Set HS-WS200+/HS-WD200+ switch into Normal (dimmer) mode
 # Parameters:
 #   node_id (Int):     Z-Wave Node ID of the switch to change
 #
@@ -32,7 +32,7 @@ ws200_normal_mode:
         value: Normal mode
 
 
-# ws200_led_color - Set HS-WS200+ color for a given LED
+# ws200_led_color - Set HS-WS200+/HS-WD200+ color for a given LED
 # Parameters:
 #   node_id (Int):     Z-Wave Node ID of the switch to change
 #   led (Int):         LED (1-7) to set the color for (1 is bottom, 7 is top)
@@ -43,7 +43,7 @@ ws200_normal_mode:
 #
 #   Valid colors are: Off, Blue, Cyan, Green, Red, White, and Yellow
 ws200_led_color:
-  alias: Change the specified "Status mode" LED color on an HS-WS200+ switch
+  alias: Change the specified "Status mode" LED color on an HS-WS200+/HS-WD200+ switch
   sequence:
     - service: zwave.set_config_parameter
       data_template:
@@ -51,7 +51,7 @@ ws200_led_color:
         parameter: "{{ led + 20 }}"
         value: "{{ color }}"
 
-# ws200_blink_frequency - Set HS-WS200+ LED blinking frequency
+# ws200_blink_frequency - Set HS-WS200+/HS-WD200+ LED blinking frequency
 # Parameters:
 #   node_id (Int):     Z-Wave Node ID of the switch to change
 #   frequency (Int):   Blink frequency in 100ms integer increments; 0 is solid
@@ -87,7 +87,7 @@ ws200_blink_frequency:
 #  '255' will be all blinking. Bit 0 (value of 1) is LED 1, and bit 7 (value
 #  of 64) is LED 7.
 ws200_led_blink_bitmask:
-  alias: Specify which LEDs to blink in Status mode via bitmask on HS-WS200+ switch
+  alias: Specify which LEDs to blink in Status mode via bitmask on HS-WS200+/HS-WD200+ switch
   sequence:
     - service: zwave.set_config_parameter
       data_template:

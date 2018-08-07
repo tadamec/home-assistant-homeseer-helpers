@@ -1,26 +1,27 @@
 #HS-WS200+ Switch Helpers
 
 The `ws200.yml` file contains helpers for the HomeSeer 
-[HS-WS200+](https://shop.homeseer.com/collections/lighting/products/hswd200)
-line of switches.
+[HS-WS200+](https://shop.homeseer.com/collections/lighting/products/hsws200)
+switch and [HS-WD200+](https://shop.homeseer.com/collections/lighting/products/hswd200)
+dimmer.
 
 ##[Usage](#usage)
 
-The various switch modes of the HS-WS200+ switches are enabled by setting
+The various switch modes of the HS-WS200+/HS-WD200+ switches are enabled by setting
 Z-Wave configuration items. This means that the Z-Wave _node_id_ -- **not** the
 typical _entity_id_ -- must be specified for a given switch. For example,
 if switch is named _my_ws200_, there should be two entries in the
 `entity_registry.yml` similar to below:
 
 ```yaml
-zwave.my_ws200:
+zwave.my_wd200:
   config_entry_id:
-  name: Home Seer HS-WS200+ Status Dimmer
+  name: Home Seer HS-WD200+ Status Dimmer
   platform: zwave
   unique_id: node-1
-light.my_ws200_level:
+light.my_wd200_level:
   config_entry_id:
-  name: Home Seer HS-WS200+ Status Dimmer Level
+  name: Home Seer HS-WD200+ Status Dimmer Level
   platform: zwave
   unique_id: 1-12345678901234567
 ```
@@ -49,7 +50,7 @@ The following scripts are included.
 
 ### `ws200_status_mode`
 
-Enable status mode on an HS-WS200+ switch.
+Enable status mode on an HS-WS200+/HS-WD200+ switch.
 
 #### Parameters
 
@@ -87,7 +88,7 @@ Results:
 
 ### `ws200_normal_mode`
 
-Enable normal (dimmer) mode on an HS-WS200+ switch.
+Enable normal (dimmer) mode on an HS-WS200+/HS-WD200+ switch.
 
 #### Parameters
 
@@ -125,7 +126,7 @@ Results:
 
 ### `ws200_led_color`
 
-Change the color of the specified LED on an HS-WS200+ switch.
+Change the color of the specified LED on an HS-WS200+/HS-WD200+ switch.
 
 #### Parameters
 
@@ -177,7 +178,7 @@ Results:
 
 ### `ws200_blink_frequency`
 
-Change the blink interval of LEDs on an HS-WS200+ switch.
+Change the blink interval of LEDs on an HS-WS200+HS/HS-WD200+ switch.
 
 #### Parameters
 
@@ -224,7 +225,7 @@ Results:
 
 ### `ws200_led_blink_bitmask`
 
-Specify LEDs to blink on an HS-WS200+ switch.
+Specify LEDs to blink on an HS-WS200+/HS-WD200+ switch.
 
 #### Parameters
 
