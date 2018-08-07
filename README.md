@@ -1,2 +1,6 @@
 # home-assistant-homeseer-helpers
-Various scripts, customizations, and documentation for working with HomeSeer products in Home Assistant
+
+This repository contains a collection of scripts, configurations, and How To
+documentation for the [Home Assistant](https://home-assistant.io) home
+automation platform.
+
