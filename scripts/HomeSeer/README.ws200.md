@@ -5,6 +5,11 @@ The `ws200.yml` file contains helpers for the HomeSeer
 switch and [HS-WD200+](https://shop.homeseer.com/collections/lighting/products/hswd200)
 dimmer.
 
+##DEPRECATED
+These scripts should be considered deprecated and will no longer be maintained.
+They may be removed in a future version. Future development is being done using
+Python scripts in the [python_scripts](../python_scripts/README.md) subdirectory.
+
 ##[Usage](#usage)
 
 The various switch modes of the HS-WS200+/HS-WD200+ switches are enabled by setting
