@@ -1,0 +1,91 @@
+input_select:
+  livingroom_frontporchswitch_status1:
+    name: FrontPorch Switch - Status Light 1
+    options:
+      - "Off"
+      - Red
+      - Green
+      - Blue
+      - Magenta
+      - Yellow
+      - Cyan
+      - White
+    icon: mdi:led-outline
+  livingroom_frontporchswitch_status2:
+    name: FrontPorch Switch - Status Light 2
+    options:
+      - "Off"
+      - Red
+      - Green
+      - Blue
+      - Magenta
+      - Yellow
+      - Cyan
+      - White
+    icon: mdi:led-outline
+  livingroom_frontporchswitch_status3:
+    name: FrontPorch Switch - Status Light 3
+    options:
+      - "Off"
+      - Red
+      - Green
+      - Blue
+      - Magenta
+      - Yellow
+      - Cyan
+      - White
+    icon: mdi:led-outline
+  livingroom_frontporchswitch_status4:
+    name: FrontPorch Switch - Status Light 4
+    options:
+      - "Off"
+      - Red
+      - Green
+      - Blue
+      - Magenta
+      - Yellow
+      - Cyan
+      - White
+    icon: mdi:led-outline
+  livingroom_frontporchswitch_status5:
+    name: FrontPorch Switch - Status Light 5
+    options:
+      - "Off"
+      - Red
+      - Green
+      - Blue
+      - Magenta
+      - Yellow
+      - Cyan
+      - White
+    icon: mdi:led-outline
+  livingroom_frontporchswitch_status6:
+    name: FrontPorch Switch - Status Light 6
+    options:
+      - "Off"
+      - Red
+      - Green
+      - Blue
+      - Magenta
+      - Yellow
+      - Cyan
+      - White
+    icon: mdi:led-outline
+  livingroom_frontporchswitch_status7:
+    name: FrontPorch Switch - Status Light 7
+    options:
+      - "Off"
+      - Red
+      - Green
+      - Blue
+      - Magenta
+      - Yellow
+      - Cyan
+      - White
+    icon: mdi:led-outline
+  livingroom_frontporchswitch_ledmode:
+    name: FrontPorch Switch - Status LED Mode
+    options:
+      - Status mode
+      - Normal mode
+    icon: mdi:led-outline
