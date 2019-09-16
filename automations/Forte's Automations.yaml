@@ -1,0 +1,88 @@
+- alias: livingroom_frontporchswitch_status_light_1
+  trigger:
+  - entity_id: input_select.livingroom_frontporchswitch_status1
+    platform: state
+  condition: []
+  action:
+    service: zwave.set_config_parameter
+    data_template:
+      node_id: 68
+      parameter: 21
+      value: "{{trigger.to_state.state}}"
+- alias: livingroom_frontporchswitch_status_light_2
+  trigger:
+  - entity_id: input_select.livingroom_frontporchswitch_status2
+    platform: state
+  condition: []
+  action:
+    service: zwave.set_config_parameter
+    data_template:
+      node_id: 68
+      parameter: 22
+      value: "{{trigger.to_state.state}}"
+- alias: livingroom_frontporchswitch_status_light_3
+  trigger:
+  - entity_id: input_select.livingroom_frontporchswitch_status3
+    platform: state
+  condition: []
+  action:
+    service: zwave.set_config_parameter
+    data_template:
+      node_id: 68
+      parameter: 23
+      value: "{{trigger.to_state.state}}"
+- alias: livingroom_frontporchswitch_status_light_4
+  trigger:
+  - entity_id: input_select.livingroom_frontporchswitch_status4
+    platform: state
+  condition: []
+  action:
+    service: zwave.set_config_parameter
+    data_template:
+      node_id: 68
+      parameter: 24
+      value: "{{trigger.to_state.state}}"
+- alias: livingroom_frontporchswitch_status_light_5
+  trigger:
+  - entity_id: input_select.livingroom_frontporchswitch_status5
+    platform: state
+  condition: []
+  action:
+    service: zwave.set_config_parameter
+    data_template:
+      node_id: 68
+      parameter: 25
+      value: "{{trigger.to_state.state}}"
+- alias: livingroom_frontporchswitch_status_light_6
+  trigger:
+  - entity_id: input_select.livingroom_frontporchswitch_status6
+    platform: state
+  condition: []
+  action:
+    service: zwave.set_config_parameter
+    data_template:
+      node_id: 68
+      parameter: 26
+      value: "{{trigger.to_state.state}}"
+- alias: livingroom_frontporchswitch_status_light_7
+  trigger:
+  - entity_id: input_select.livingroom_frontporchswitch_status7
+    platform: state
+  condition: []
+  action:
+    service: zwave.set_config_parameter
+    data_template:
+      node_id: 68
+      parameter: 27
+      value: "{{trigger.to_state.state}}"
+alias: livingroom_frontporchswitch_ledmode
+  trigger:
+  - entity_id: input_select.livingroom_frontporchswitch_ledmode
+    platform: state
+  condition: []
+  action:
+    service: zwave.set_config_parameter
+    data_template:
+      node_id: 68
+      parameter: 13
+      value: "{{trigger.to_state.state}}"
